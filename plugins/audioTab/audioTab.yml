@@ -1,0 +1,15 @@
+name: audioTab
+description: Adds an audio tab to the menu bar
+url: https://github.com/sneakyninja256/stash-plugins
+version: 0.2
+ui:
+  requires:
+    - CommunityScriptsUILibrary
+  javascript:
+    - audioTab.js
+
+settings:
+  audioTabURL:
+    displayName: Customize audio tab link
+    description: "default: /scenes?c=(%22type%22:%22video_codec%22,%22modifier%22:%22IS_NULL%22)"
+    type: STRING
