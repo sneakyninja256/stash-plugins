@@ -24,7 +24,6 @@ jobs:
         ref: stable
         fetch-depth: '0'
     - run: |
-        cd stable
         ./build_site.sh ../_site/stable
     - name: Checkout develop
       uses: actions/checkout@v4
@@ -33,7 +32,6 @@ jobs:
         ref: develop
         fetch-depth: '0'
     - run: |
-        cd develop
         ../stable/build_site.sh ../_site/develop
     - uses: actions/upload-pages-artifact@v3
     
