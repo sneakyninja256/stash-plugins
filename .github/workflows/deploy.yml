@@ -18,20 +18,23 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
     - name: Checkout stable
-      uses: actions/checkout@v4
+      uses: actions/checkout@v2
       with:
         path: stable
         ref: stable
         fetch-depth: '0'
     - run: |
+        cd stable
         ./build_site.sh ../_site/stable
     - name: Checkout develop
-      uses: actions/checkout@v4
+      uses: actions/checkout@v2
       with:
         path: develop
+        # change this ref to whatever dev branch/tag we need when necessary
         ref: develop
         fetch-depth: '0'
     - run: |
+        cd develop
         ../stable/build_site.sh ../_site/develop
     - uses: actions/upload-pages-artifact@v3
     
